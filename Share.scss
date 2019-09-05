@@ -1,0 +1,25 @@
+.nav {
+	$parent: &;
+
+	&--share {
+		margin: 20px 0;
+
+		> ul {
+			margin: 0;
+		}
+
+		a {
+			background-color: #ccc;
+		}
+
+		.nav__text {
+			display: none;
+		}
+
+		.icon {
+			&:first-child {
+				margin: 0;
+			}
+		}
+	}
+}

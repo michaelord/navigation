@@ -1,0 +1,11 @@
+.nav {
+	$parent: &;
+
+	&--pagination {
+		text-align: center;
+
+		ul {
+			display: inline-flex;
+		}
+	}
+}

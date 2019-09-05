@@ -1,0 +1,28 @@
+.breadcrumb {
+	$parent: &;
+}
+
+.nav--breadcrumb {
+	a {
+		svg {
+			&:first-child {
+				margin: 0;
+			}
+
+			~ * {
+				display: none;
+			}
+		}
+	}
+
+	li {
+		display: flex;
+		align-items: center;
+
+		&:not(:last-child) {
+			&:after {
+				content: '/';
+			}
+		}
+	}
+}
