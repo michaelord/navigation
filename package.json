@@ -8,13 +8,14 @@
     "type": "git",
     "url": "http://github.com/michaelord/navigation.git"
   },
-  "devDependencies": {
+  "devDependencies": {},
+  "author": "michaelord",
+  "keywords": [],
+  "dependencies": {
     "components/editable": "http://github.com/michaelord/editable.git",
     "components/icon": "http://github.com/michaelord/icon.git",
     "components/libs": "http://github.com/michaelord/libs.git",
     "components/ui": "http://github.com/michaelord/ui.git",
     "components/layout": "http://github.com/michaelord/layout.git"
-  },
-  "author": "michaelord",
-  "keywords": []
+  }
 }
