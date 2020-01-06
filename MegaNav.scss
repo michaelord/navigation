@@ -1,0 +1,11 @@
+.meganav {
+	padding: var(--space-lg) 0;
+
+	&__main {
+		display: flex;
+	}
+
+	&__heading {
+		flex: 0 0 300px;
+	}
+}

@@ -1,0 +1,16 @@
+---
+title: Back to Top
+tags : ["all", "navigation", "wip"]
+category: "Undefined"
+logo: "./thumbnail.jpg"
+icon: '<svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg" fill="none"><rect width="260" height="180" fill="var(--color-bg)"></rect><circle cx="210" cy="129" r="32" fill="var(--color-contrast-high)"></circle><path d="M221.25 134.25L210 123L198.75 134.25" stroke="var(--color-bg)" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
+published : true
+---
+import { Playground, PlaygroudCode } from 'components/styleguide';
+import { BackToTop } from 'components/navigation';
+
+[TODO]
+
+<BackToTop isFixed={false} />
+
+<BackToTop isFixed={true} />

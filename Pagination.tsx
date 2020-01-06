@@ -1,43 +1,65 @@
-import * as React from 'react';
-
+import IconChevronLeft from 'components/icon/chevron-left.inline.svg';
+import IconChevronRight from 'components/icon/chevron-right.inline.svg';
+import React from 'react';
+import {Navigation} from './';
 import './Pagination.scss';
 
-import {Navigation} from './';
+import {LinkItem} from 'components/editable';
 
-import IconLeft from 'components/icon/cheveron-left.inline.svg';
-import IconRight from 'components/icon/cheveron-right.inline.svg';
+import * as Utils from 'components/libs';
 
-// export type PaginationProps = {};
+import * as Types from 'components/types';
 
-export const Pagination = (/*props: PaginationProps*/) => {
-	const links = [
-		{
-			label: 'Prev',
-			href: '#1',
-			icon: IconLeft,
-		},
-		{
-			label: '1',
-			href: '#1',
-		},
-		{
-			label: '2',
-			href: '#2',
-		},
-		{
-			label: '3',
-			href: '#3',
-		},
-		{
-			label: '4',
-			href: '#4',
-		},
-		{
-			label: 'Next',
-			href: '#4',
-			iconSuffix: IconRight,
-		},
-	];
+export type PaginationProps = {
+	current?: number;
+	total?: number;
+	pattern?: Types.Text;
+	base?: Types.Text;
+};
 
-	return <Navigation name="pagination" layout="inline" items={links} />;
+export const Pagination = (props: PaginationProps) => {
+	const {current = 1, total = 0, pattern = 'page/{page}/', base = '/'} = props;
+
+	if (total < 2) {
+		return null;
+	}
+
+	const pages: Array<LinkItem> = [];
+
+	pages.push({
+		label: 'Prev',
+		href:
+			current > 1
+				? Utils.replaceTokens(`${base}${pattern}`, {
+						page: current - 1,
+				  })
+				: null,
+		icon: IconChevronLeft,
+	});
+
+	Array.from({length: total}).forEach((_, i) => {
+		pages.push({
+			label: String(i + 1),
+			href:
+				i + 1 === current
+					? base
+					: Utils.replaceTokens(`${base}${pattern}`, {
+							page: i + 1,
+					  }),
+			isActive: i + 1 === current,
+		});
+	});
+
+	pages.push({
+		label: 'Next',
+		href:
+			current < total
+				? Utils.replaceTokens(`${base}${pattern}`, {
+						page: current + 1,
+				  })
+				: null,
+		iconSuffix: IconChevronRight,
+	});
+
+	return <Navigation name="pagination" layout="inline" items={pages} />;
 };

@@ -1,0 +1,40 @@
+.table-of-contents {
+	$parent: &;
+
+	&__main {
+		display: flex;
+	}
+
+	&__nav {
+		flex: 0 0 300px;
+		padding-right: var(--grid-gap);
+
+		> * {
+			position: sticky;
+			top: 20px;
+		}
+	}
+
+	&__content {
+		flex-grow: 1;
+	}
+
+	&__item {
+	}
+
+	&--bullet {
+		#{$parent} {
+			&__main {
+				flex-direction: row-reverse;
+			}
+			&__nav {
+				flex: 0 0 100px;
+				padding: 0;
+
+				> * {
+					top: 50%;
+				}
+			}
+		}
+	}
+}

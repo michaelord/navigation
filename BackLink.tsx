@@ -1,11 +1,10 @@
-import * as React from 'react';
-
+import {Link, LinkItem} from 'components/editable';
+import IconChevronLeft from 'components/icon/chevron-left.inline.svg';
+import React from 'react';
 import './BackLink.scss';
 
-import {Link, LinkItem} from 'components/editable';
-
-import IconCheveron from 'components/icon/cheveron-left.inline.svg';
+import * as Types from 'components/types';
 
 export const BackLink = (props: LinkItem) => {
-	return <Link {...props} icon={IconCheveron} />;
+	return <Link {...props} classes="back" icon={IconChevronLeft} />;
 };

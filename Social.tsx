@@ -1,8 +1,8 @@
-import * as React from 'react';
-
+import React from 'react';
+import {Navigation, NavItem} from './';
 import './Social.scss';
 
-import {Navigation, NavItem} from './';
+import * as Types from 'components/types';
 
 type Props = {
 	items?: Array<NavItem>;

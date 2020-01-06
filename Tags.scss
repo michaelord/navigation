@@ -1,0 +1,28 @@
+.tags {
+	$parent: &;
+
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+
+	li {
+		display: inline-block;
+
+		margin-right: var(--space-xs);
+
+		> * {
+			display: block;
+		}
+	}
+
+	[data-tag] {
+		background-color: var(--accent-light);
+		color: var(--accent-color);
+	}
+
+	[data-tag='done'] {
+		background-color: green;
+		color: #fff;
+	}
+}

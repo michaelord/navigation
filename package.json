@@ -1,21 +1,31 @@
 {
-  "name": "navigation",
-  "private": true,
-  "description": "...",
-  "version": "0.1.0",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/michaelord/navigation.git"
-  },
-  "devDependencies": {},
-  "author": "michaelord",
-  "keywords": [],
-  "dependencies": {
-    "components/editable": "http://github.com/michaelord/editable.git",
-    "components/icon": "http://github.com/michaelord/icon.git",
-    "components/libs": "http://github.com/michaelord/libs.git",
-    "components/ui": "http://github.com/michaelord/ui.git",
-    "components/layout": "http://github.com/michaelord/layout.git"
-  }
+	"name": "navigation",
+	"private": true,
+	"description": "...",
+	"version": "0.1.0",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/michaelord/navigation.git"
+	},
+	"devDependencies": {},
+	"author": "michaelord",
+	"keywords": [],
+	"dependencies": {
+		"components/editable": "http://github.com/michaelord/editable.git",
+		"components/icon": "http://github.com/michaelord/icon.git",
+		"components/types": "http://github.com/michaelord/types.git",
+		"components/navigation": "http://github.com/michaelord/navigation.git",
+		"components/libs": "http://github.com/michaelord/libs.git",
+		"components/article": "http://github.com/michaelord/article.git",
+		"components/content": "http://github.com/michaelord/content.git",
+		"components/form": "http://github.com/michaelord/form.git",
+		"components/layout": "http://github.com/michaelord/layout.git",
+		"components/provider": "http://github.com/michaelord/provider.git",
+		"components/ui": "http://github.com/michaelord/ui.git",
+		"components/loader": "http://github.com/michaelord/loader.git",
+		"components/accordion": "http://github.com/michaelord/accordion.git",
+		"components/development": "http://github.com/michaelord/development.git",
+		"react-container-query": "^0.11.0"
+	}
 }

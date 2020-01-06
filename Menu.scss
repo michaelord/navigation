@@ -1,6 +1,4 @@
 .menu {
-	// margin: var(--space-md) 0;
-
 	&,
 	ul {
 		position: relative;
@@ -17,36 +15,35 @@
 
 	&--chrome,
 	ul {
-		padding: var(--space-xxs) 0;
-		// max-width: 200px;
+		padding: var(--space-2xs) 0;
 		box-shadow: var(--shadow-sm);
 		border-radius: var(--radius-md);
 	}
 
 	&--chrome {
-		margin: var(--space-md) 0;
 	}
 
 	ul {
 		margin: 0;
 		position: absolute;
 		left: 100%;
-		top: calc(var(--space-xxs) * -1);
+		top: calc(var(--space-2xs) * -1);
 	}
 
 	li {
 		position: relative;
 	}
 
-	a, button {
-		width:100%;
+	a,
+	button {
+		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		text-decoration: none;
-		background:none;
-		border:none;
-		line-height:inherit;
+		background: none;
+		border: none;
+		line-height: inherit;
 
 		padding: 0.375em 0.75em;
 
@@ -62,11 +59,12 @@
 			width: 16px;
 			height: 16px;
 
-			margin-right: var(--space-xxs);
+			margin-right: var(--space-2xs);
 		}
 
+		// TODO
 		&[aria-selected='true'] {
-			background-color: hsl(220, 90%, 56%);
+			background-color: var(--color-primary);
 			color: #fff;
 		}
 	}
@@ -77,14 +75,10 @@
 	a:hover:not([aria-selected='true']),
 	li:hover > a:not([aria-selected='true']),
 	li:focus-within > a:not([aria-selected='true']),
-
 	button:hover:not([aria-selected='true']),
 	li:hover > button:not([aria-selected='true']),
-	li:focus-within > button:not([aria-selected='true'])
-
-
-
-	{
+	li:focus-within > button:not([aria-selected='true']) {
+		// TODO
 		background-color: #f2f2f2;
 	}
 }

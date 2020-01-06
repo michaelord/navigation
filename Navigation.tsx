@@ -1,50 +1,81 @@
-import * as React from 'react';
-
+import {Heading, LinkItem} from 'components/editable';
+import {getModifiers} from 'components/libs';
+import React from 'react';
+import {NavigationLevel} from './';
 import './Navigation.scss';
 
-import {getModifiers} from 'components/libs';
+import * as Types from 'components/types';
 
-import {NavItem, NavigationLevel} from './';
+type Layout = 'default' | 'inline' | 'horizontal';
 
-import {Heading, LinkItem} from 'components/editable';
-
-type Layout = 'default' | 'inline' | 'dropdown';
-
-export type NavigationProps = {
-	layout?: Layout;
-	items: Array<NavItem>;
-	title?: string;
-	name?: string;
-};
-
-export type NavigationLevelProps = {
+export type NavItem = LinkItem & {
 	items?: Array<NavItem>;
 };
 
-export type NavItem = LinkItem & NavigationLevelProps;
+export type NavigationLevelProps = {
+	autoIcon?: boolean;
+	items?: Array<NavItem>;
+	megaNav?: boolean;
+};
+
+export type NavigationProps = {
+	layout?: Layout;
+	items?: Array<NavItem> | null;
+	title?: Types.Text;
+	name?: string;
+	className?: string;
+	megaNav?: boolean;
+};
+
+export const hasChildren = (items: Array<NavItem> | undefined): boolean => {
+	if (!items) {
+		return false;
+	}
+
+	return (
+		items.filter(item => {
+			return item.items && item.items.length > 0;
+		}).length > 0
+	);
+};
+
+export const isNavigationValid = (items: Array<NavItem> | undefined): boolean => {
+	if (!items || (items && items.length === 0)) {
+		return false;
+	}
+
+	return true;
+};
 
 export class Navigation extends React.PureComponent<NavigationProps> {
 	base: string = 'nav';
 
 	renderNavigation(): React.ReactNode {
-		const {items} = this.props;
+		const {items, layout, megaNav} = this.props;
 
-		return <NavigationLevel items={items} />;
+		if (!items) {
+			return null;
+		}
+
+		return <NavigationLevel items={items} megaNav={megaNav} autoIcon={layout === 'horizontal'} />;
 	}
 
 	render(): React.ReactNode {
-		const {layout = 'default', title, name, items} = this.props;
+		const {layout = 'default', title, name, items, className} = this.props;
 
-		const hasChildren = items.filter(item => {
-			return item.items && item.items.length > 0;
-		});
+		if (!items) {
+			return null;
+		}
+
+		const isNested: boolean = hasChildren(items);
 
 		const atts = {
-			className: getModifiers(this.base, {
-				name,
-				layout,
-				nested: hasChildren.length > 0,
-			}),
+			className:
+				getModifiers(this.base, {
+					name,
+					layout,
+					nested: isNested,
+				}) + (className ? ` ${className}` : ''),
 		};
 
 		return (

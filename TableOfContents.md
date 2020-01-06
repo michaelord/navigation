@@ -1,5 +1,5 @@
 ---
-title: Steps
+title: Table of Contents
 tags : ["all", "navigation", "wip"]
 category: "Undefined"
 logo: "./thumbnail.jpg"
@@ -7,21 +7,33 @@ icon: '<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180"
 published : true
 ---
 import { Playground, PlaygroudCode } from 'components/styleguide';
-import { Steps } from 'components/navigation';
+import { TableOfContents, TableOfContentsItem } from 'components/navigation';
+import { Placeholder } from 'components/libs';
 
 [TODO]
 
-<Steps
-    current={0}
-    steps={[
-        {
-            label: 'Step 1',
-        },
-        {
-            label: 'Step 2',
-        },
-        {
-            label: 'Step 3',
-        },
-    ]}
-/>
+<TableOfContents>
+	<TableOfContentsItem title="item" id="x">
+		<Placeholder.P />
+	</TableOfContentsItem>
+	<TableOfContentsItem title="item" id="x">
+		<Placeholder.P />
+	</TableOfContentsItem>
+	<TableOfContentsItem title="item" id="x">
+		<Placeholder.P />
+	</TableOfContentsItem>
+</TableOfContents>
+
+## Bulleted
+
+<TableOfContents type="bullet">
+	<TableOfContentsItem title="item" id="x">
+		<Placeholder.P />
+	</TableOfContentsItem>
+	<TableOfContentsItem title="item" id="x">
+		<Placeholder.P />
+	</TableOfContentsItem>
+	<TableOfContentsItem title="item" id="x">
+		<Placeholder.P />
+	</TableOfContentsItem>
+</TableOfContents>

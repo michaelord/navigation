@@ -10,9 +10,15 @@
 
 		a {
 			background-color: #ccc;
+			transition: all 0.3s;
+
+			&:hover,
+			&:focus {
+				color: red;
+			}
 		}
 
-		.nav__text {
+		.text {
 			display: none;
 		}
 

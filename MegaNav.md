@@ -1,5 +1,5 @@
 ---
-title: Steps
+title: Mega Nav
 tags : ["all", "navigation", "wip"]
 category: "Undefined"
 logo: "./thumbnail.jpg"
@@ -7,21 +7,14 @@ icon: '<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180"
 published : true
 ---
 import { Playground, PlaygroudCode } from 'components/styleguide';
-import { Steps } from 'components/navigation';
+import {MegaNav} from 'components/navigation';
 
 [TODO]
 
-<Steps
-    current={0}
-    steps={[
-        {
-            label: 'Step 1',
-        },
-        {
-            label: 'Step 2',
-        },
-        {
-            label: 'Step 3',
-        },
-    ]}
-/>
+<MegaNav>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, id corrupti? Non eum,
+        excepturi aliquam et iste itaque aliquid, atque, magnam fugit dolore quia minima similique quam
+        nulla tempora! Nisi!
+    </p>
+</MegaNav>
